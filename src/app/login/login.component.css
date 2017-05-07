@@ -1,6 +1,5 @@
-.fundo  {
-    background-image: url("../../assets/images/fundo.jpg");
-    background-repeat: no-repeat;
-    background-color: #cccccc;
-    width: 80%;
+
+.container {
+    width: 50%
 }
+
