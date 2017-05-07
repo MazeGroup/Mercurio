@@ -15,6 +15,8 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { RegisterService } from './register/register.service';
 import { CatalogComponent } from './catalog/catalog.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { GraficoModule } from "app/grafico/grafico.module";
 
 export const environmentFireBase = {
   production: false,
@@ -33,14 +35,16 @@ export const environmentFireBase = {
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    CatalogComponent
+    CatalogComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     AppRoutingModule,
-    AngularFireModule.initializeApp(environmentFireBase.firebase)
+    AngularFireModule.initializeApp(environmentFireBase.firebase),
+    GraficoModule
     // MaterializeModule
   ],
   providers: [

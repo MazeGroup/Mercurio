@@ -13,8 +13,8 @@
   </div>
 </div>
 <div class="row">
-  <div class="col m12" >
-    <div class="col m2" ng-If="products" *ngFor="let product of productsSearch()" >
+  <div class="col m12" ng-If="products" >
+    <div class="col m2"  *ngFor="let product of productsSearch()"  >
       <div class="card">
         <div class="card-image">
           <img [src]="product.image">

@@ -1,31 +1,30 @@
-<!-- Navbar goes here -->
-  <nav>
-    <div class="nav-wrapper">
-      <a href="#" class="brand-logo">Logo</a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="sass.html">Sass</a></li>
-        <li><a href="badges.html">Components</a></li>
-        <li><a href="collapsible.html">JavaScript</a></li>
-      </ul>
-    </div>
-  </nav>
+<div class="row">
 
-    <!-- Page Layout here -->
-    <div class="row">
+  <div *ngIf="mostrar" class="col s12 m4 l3">
+    
+    <ul id="slide-out" class="side-nav fixed">
+      <li>
 
-      <div class="col s12 m4 l3"> <!-- Note that "m4 l3" was added -->
-        <!-- Grey navigation panel
+        <div class="userView">
+          <div class="background">
+          <img src="../assets/images/download.jpg">
+        </div>
+          <a href="#!user"><img class="circle" src="../assets/images/user.jpg"></a>
+          <a href="#!name"><span class="white-text name">{{_loginService.user.name}}</span></a>
+          <a href="#!email"><span class="white-text email">{{_loginService.user.email}}</span></a>
+        </div>
+      </li>
+      <li><a [routerLink]="['']" ><i class="material-icons">dashboard</i>Dashboard</a></li>
+      <li><a [routerLink]="['/catalog']" ><i class="material-icons">receipt</i>Catálogo</a></li>
+      <li><div class="divider"></div></li>
+    </ul>
+    <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
 
-              This content will be:
-          3-columns-wide on large screens,
-          4-columns-wide on medium screens,
-          12-columns-wide on small screens
-          col s12 m8 l9  -->
+  
+  </div>
 
-      </div>
+  <div [ngClass]="{'col s12 m8 l9': mostrar}"  > 
+    <router-outlet></router-outlet>
+  </div>
 
-      <div class="">
-        <router-outlet></router-outlet>
-      </div>
-
-    </div>
+</div>

@@ -2,13 +2,14 @@ import { Observable } from 'rxjs/Rx';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 
+import { LoginService } from './../login/login.service';
 import { User } from './../models/user';
 import { AngularFire } from 'angularfire2';
 
 @Injectable()
 export class RegisterService {
 
-  constructor(private _angularFire: AngularFire, private _router: Router) { }
+  constructor(private _angularFire: AngularFire, private _router: Router, private _loginService: LoginService) { }
 
   registerUser(user: User) {
     return Observable.create(observer => {
@@ -20,7 +21,9 @@ export class RegisterService {
           number: user.number,
           provider: 'email',
         });
-        this._router.navigate(['/catalog']);
+        this._loginService.user = user;
+        this._loginService.mostrar.emit(true);
+        this._router.navigate(['']);
       }).catch((error: any) => {
         if (error) {
           switch (error.code) {

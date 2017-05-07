@@ -15,16 +15,22 @@ export class CatalogComponent implements OnInit {
 
   ngOnInit() {
     this._angularFire.database.list('products')
-      .subscribe(data => {this.products = data})
+      .subscribe(data => {
+        this.products = data[0];
+      })
   }
 
   productsSearch() {
-
     if (this.products) {
 
       if (this.products.length === 0 || this.filter === undefined
       || this.filter.trim() === '') {
-        return this.products;
+        return this.products.filter((p) => {
+          if (p) {
+            return true;
+          }
+          return false;
+        });
       }
 
       return this.products.filter((p) => {

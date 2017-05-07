@@ -28,13 +28,12 @@ export class AuthGuard implements CanActivate {
   ): Observable<boolean> | boolean {
 
     // Verificando se o usuario esta autenticado se sim retorno true.
-    // if (this.loginService.usuarioEstaAutenticado()) {
-    //   return true;
-    // }else {
-    //   this.router.navigate(['/login']);
-    //   return false;
-    // }
-    return true;
+    if (this.loginService.userExist()) {
+      return true;
+    }else {
+      this.router.navigate(['/login']);
+      return false;
+    }
   }
 
 }
