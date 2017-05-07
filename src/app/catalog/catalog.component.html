@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col m12">
-      <h2 class="center-align">Catalogo</h2>
+      <h2 class="center-align">Catálogo</h2>
       <div class="row">
           <div class="col s12">
               <div class="row">
@@ -13,20 +13,17 @@
   </div>
 </div>
 <div class="row">
-  <div class="col m12" ng-If="products" >
-    <div class="col m2"  *ngFor="let product of productsSearch()"  >
+    <div class="col m3" ng-If="products" *ngFor="let product of productsSearch()"  >
       <div class="card">
         <div class="card-image">
           <img [src]="product.image">
-          <span class="card-title">{{product.title}}</span>
         </div>
         <div class="card-content">
-          <p>{{product.description}}</p>
+          <p><span>{{product.title}}</span></p>
+          <p>Preço: {{product.price}}</p>
+          <p>Comissão: {{product.commission}}%</p>
         </div>
-        <div class="card-action">
-          <a href="#">Filiar-se</a>
-        </div>
-      </div> 
+      </div>
     </div>
-  </div>
-</div>
+    
+  </div>    

@@ -19,7 +19,7 @@ export class LoginService {
       .subscribe(data => {
         this.getUserData().subscribe(data => {
            this.mostrar.emit(true);
-          this._router.navigate(['']);
+          this._router.navigate(['/catalog']);
         });
       });
   }

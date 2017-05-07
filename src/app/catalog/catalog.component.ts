@@ -14,9 +14,10 @@ export class CatalogComponent implements OnInit {
   constructor(private _angularFire: AngularFire) { }
 
   ngOnInit() {
+    console.log('asOIAsio')
     this._angularFire.database.list('products')
       .subscribe(data => {
-        this.products = data[0];
+        this.products = data;
       })
   }
 

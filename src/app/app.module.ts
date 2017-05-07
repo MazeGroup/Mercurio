@@ -17,6 +17,7 @@ import { RegisterService } from './register/register.service';
 import { CatalogComponent } from './catalog/catalog.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { GraficoModule } from "app/grafico/grafico.module";
+import { RegisterProductComponent } from './register-product/register-product.component';
 
 export const environmentFireBase = {
   production: false,
@@ -36,7 +37,8 @@ export const environmentFireBase = {
     LoginComponent,
     RegisterComponent,
     CatalogComponent,
-    DashboardComponent
+    DashboardComponent,
+    RegisterProductComponent
   ],
   imports: [
     BrowserModule,

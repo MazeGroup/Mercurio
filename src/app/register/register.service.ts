@@ -23,7 +23,7 @@ export class RegisterService {
         });
         this._loginService.user = user;
         this._loginService.mostrar.emit(true);
-        this._router.navigate(['']);
+        this._router.navigate(['/catalog']);
       }).catch((error: any) => {
         if (error) {
           switch (error.code) {
